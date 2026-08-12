@@ -21,8 +21,8 @@
 
 notifications:
   commits:      commits@accumulo.apache.org
-  issues:       commits@accumulo.apache.org
-  pullrequests: commits@accumulo.apache.org
+  issues:       notifications@accumulo.apache.org
+  pullrequests: notifications@accumulo.apache.org
   jira_options: worklog
 
 github:
