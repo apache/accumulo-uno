@@ -26,10 +26,9 @@ notifications:
   jira_options: worklog
 
 github:
-  description: "Apache Fluo Uno"
-  homepage: https://fluo.apache.org
+  description: "Apache Accumulo Uno"
+  homepage: https://accumulo.apache.org
   labels:
-    - fluo
     - accumulo
     - big-data
     - hacktoberfest
