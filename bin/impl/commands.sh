@@ -287,7 +287,11 @@ function uno_status_main() {
 
 function uno_ashell_main() {
   check_dirs ACCUMULO_HOME || return 1
-  "$ACCUMULO_HOME"/bin/accumulo shell -u "$ACCUMULO_USER" -p "$ACCUMULO_PASSWORD" "$@"
+  if [[ $ACCUMULO_VERSION =~ ^[23]\..*$ ]]; then
+    "$ACCUMULO_HOME"/bin/accumulo shell -u "$ACCUMULO_USER" -p "$ACCUMULO_PASSWORD" "$@"
+  else
+    "$ACCUMULO_HOME"/bin/accumulo shell "$@"
+  fi
 }
 
 function uno_jshell_main() {
