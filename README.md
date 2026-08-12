@@ -10,8 +10,6 @@ about preserving data. While Uno makes it easy to setup a dev stack running Fluo
 also makes it easy to clear your data and setup your dev stack again. To avoid inadvertent data loss,
 Uno should not be used in production.
 
-Checkout [Muchos] for setting up Accumulo or Fluo on multiple machines.
-
 ## Requirements
 
 Uno requires the following software to be installed on your machine.
@@ -35,8 +33,8 @@ have satisfied the requirements mentioned above.  Replace `accumulo` with `fluo`
 setup a Fluo instance.
 
 ```bash
-git clone https://github.com/apache/fluo-uno.git
-cd fluo-uno
+git clone https://github.com/apache/accumulo-uno.git
+cd accumulo-uno
 ./bin/uno fetch accumulo            # Fetches binary tarballs of Accumulo and its dependencies
 ./bin/uno setup accumulo            # Sets up Accumulo and its dependencies (Hadoop & ZooKeeper)
 source <(./bin/uno env)             # Bash-specific command that sets up current shell
@@ -71,7 +69,7 @@ For a more complete understanding of Uno, please continue reading.
 
 First, clone the Uno repo on a local disk with enough space to run Hadoop, Accumulo, etc:
 
-    git clone https://github.com/apache/fluo-uno.git
+    git clone https://github.com/apache/accumulo-uno.git
 
 The `uno` command uses `conf/uno.conf` for its default configuration which should be
 sufficient for most users.
@@ -194,17 +192,16 @@ section of the Fluo install instructions. These instructions will guide you thro
 configuring, initializing, and starting your application.
 
 [Accumulo Proxy]: https://github.com/apache/accumulo-proxy
-[Muchos]: https://github.com/apache/fluo-muchos
 [Phrasecount]: https://github.com/apache/fluo-examples/tree/main/phrasecount
 [Webindex]: https://github.com/apache/fluo-examples/tree/main/webindex
 [accumulo]: https://accumulo.apache.org/
-[ci_img]: https://github.com/apache/fluo-uno/workflows/ShellCheck/badge.svg
-[ci_link]: https://github.com/apache/fluo-uno/actions
+[ci_img]: https://github.com/apache/accumulo-uno/workflows/ShellCheck/badge.svg
+[ci_link]: https://github.com/apache/accumulo-uno/actions
 [configure]: https://github.com/apache/fluo/blob/main/docs/install.md#configure-a-fluo-application
 [fluo]: https://fluo.apache.org/
 [hadoop]: https://hadoop.apache.org/
 [li]: https://img.shields.io/badge/license-Apache%202.0-blue.svg
-[ll]: https://github.com/apache/fluo-uno/blob/main/LICENSE
+[ll]: https://github.com/apache/accumulo-uno/blob/main/LICENSE
 [logo]: contrib/uno-logo.png
 [mirrors]: https://www.apache.org/dyn/closer.cgi
 [ssh-docs]: https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-common/SingleCluster.html#Setup_passphraseless_ssh
