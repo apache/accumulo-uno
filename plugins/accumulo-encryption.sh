@@ -24,6 +24,10 @@ fi
 
 accumulo_conf=$ACCUMULO_HOME/conf/accumulo.properties
 encrypt_key=$ACCUMULO_HOME/conf/data-encryption.key
-openssl rand -out $encrypt_key 32
-echo "instance.crypto.opts.key.uri=file://$encrypt_key" >>"$accumulo_conf"
-echo "instance.crypto.service=$(jar -tvf "$ACCUMULO_HOME"/lib/accumulo-core-2.*.jar | grep -o 'org.apache.accumulo.core.*AESCryptoService' | tr / . | tail -1)" >>"$accumulo_conf"
+openssl rand -out "$encrypt_key" 32
+cat >>"$accumulo_conf" <<EOF
+
+# added by the accumulo-encryption plugin
+instance.crypto.opts.key.uri=file://$encrypt_key
+instance.crypto.service=$(jar -tvf "$ACCUMULO_HOME"/lib/accumulo-core-*.jar | grep -o 'org.apache.accumulo.core.*AESCryptoService' | tr / . | tail -1)
+EOF
